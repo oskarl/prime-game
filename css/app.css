@@ -1,3 +1,75 @@
 html, body {
 	font-family: Helvetica;
+	margin: 0px;
+}
+
+a {
+	color: #0c50c7;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.navigation-bar {
+	height: 44px;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 44px;
+	border-bottom: 1px #EEEEEE solid;
+	text-align: center;
+}
+
+.view-controller .view {
+	padding: 10px;
+}
+
+#q {
+	text-align: center;
+	margin: 40px;
+}
+
+#q strike {
+	font-weight: normal;
+}
+
+#guess {
+	width: 200px;
+	margin: auto;
+	padding: 20px;
+	font-size: 15px;
+	display: block;
+	text-align: center;
+}
+
+.incorrect {
+	box-shadow: 0 0px 16px 0 rgba(255, 0, 0, 0.5);
+}
+
+.correct {
+	box-shadow: 0 0px 16px 0 rgba(0, 255, 0, 0.5);
+}
+
+#submit {
+	margin: auto;
+	display: block;
+	padding: 20px;
+}
+
+.nav-button {
+	position: absolute;
+	left: 10px;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+#settings h2 {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }

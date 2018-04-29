@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>create-pwa - a minimal vanilla pwa template</title>
+		<title>Prime Factorization Game</title>
 		<link rel="stylesheet" type="text/css" href="css/app.css">
 		<script type="text/javascript" src="js/app.js"></script>
 
@@ -11,7 +11,7 @@
 		<link rel="manifest" href="manifest.json">
 
 		<!-- iOS /-->
-		<meta name="apple-mobile-web-app-title" content="create-pwa">
+		<meta name="apple-mobile-web-app-title" content="Prime factorization game PWA">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 		<link rel="apple-touch-icon" href="img/touch-icon.png">
@@ -21,21 +21,52 @@
 		<link rel="shortcut icon" href="favicon.ico">
 
 		<!-- SEO /-->
-		<meta name="description" content="create-pwa is a minimal pwa template written in vanilla js.">
+		<meta name="description" content="Prime Factorization Game.">
 	</head>
 	<body>
-		<h1>create-pwa</h1>
-		<h2>a minimal vanilla pwa template</h2>
-		<p>Welcome.</p>
-		<h3>TODO</h3>
-		<ul>
-			<li>Icon (different sizes)</li>
-			<li>Favicon</li>
-			<li>readme.md</li>
-			<li>onload function</li>
-			<li>Service worker</li>
-			<li>Offline page</li>
-			<li>100 lighthouse score</li>
-		</ul>
+		<div id="game" class="view-controller">
+			<h1 class="navigation-bar">Prime Factorization Game<a href="javascript:openSettings();" class="nav-button">Settings</a></h1>
+			<div class="view">
+				<h2 id="q"></h2>
+				<form action="javascript:answer();">
+				<input type="number" id="guess" placeholder="enter a prime factor">
+				<br />
+				<input type="submit" id="submit" value="Divide">
+				</form>
+			</div>
+		</div>
+		<div id="settings" class="view-controller" style="display: none;">
+			<h1 class="navigation-bar">Settings<a href="javascript:openGame();" class="nav-button">Play</a></h1>
+			<div class="view">
+				<h2>Game</h2>
+				Difficulty:
+				<br /><br />
+				<input type="radio" id="easy" name="diff" selected> <label for="easy">Easy (2-150)</label><br />
+				<input type="radio" id="medium" name="diff"> <label for="medium">Medium (2-300)</label><br />
+				<input type="radio" id="hard" name="diff"> <label for="hard">Hard (2-1000)</label><br />
+				<input type="radio" id="extreme" name="diff"> <label for="extreme">Extreme (2-10000)</label>
+
+				<h2>About primes</h2>
+				<p>Finding the prime factors of a number can be done by trial division, trying all possible primes up to the square root of the number to see if they're factors. If none of them are, the number itself is prime.</p>
+				<p>A list of all primes smaller than 10,000 can be found <a href="javascript:openList();">here</a>.</p>
+				<p>There are also some tricks that can be used, such as:</p>
+				<ul>
+					<li>If a number ends in 0, 2, 4, 6 or 8, it's even and 2 is a prime factor.</li>
+					<li>If the sum of the digits is divisible by 3, then 3 is a prime factor.</li>
+					<li>If a number ends in 0 or 5, then 5 is a prime factor.</li>
+				</ul>
+				<p>Several more interesting rules can be found on <a href="https://en.wikipedia.org/wiki/Divisibility_rule" target="_new">Wikipedia</a>.</p>
+
+				<h2>About this game</h2>
+				<p>This game is a PWA (progressive web app) which means you can save it to the home screen of your phone. Your settings will be saved and it will be available offline. More cool PWAs can be found on <a href="https://appsco.pe" target="_new">Appscope</a>.</p>
+			</div>
+		</div>
+		<div id="list" class="view-controller" style="display: none;">
+			<h1 class="navigation-bar">List of primes<a href="javascript:goBack();" class="nav-button">Back</a></h1>
+			<div class="view">
+				<p>Here's a list of all prime numbers under 10,000.</p>
+				<p id="prime-list"></p>
+			</div>
+		</div>
 	</body>
 </html>
