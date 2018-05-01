@@ -1,7 +1,7 @@
 var q;
 var starts = [14, 15, 18, 22, 10];
 var congrats = ['Good work!', 'Nice!', 'Got \'em!', 'Wow!', 'Great!'];
-var limit = 150;
+var limit = localStorage.getItem('limit') || 150;
 
 var primes = [];
 for(var i = 2; i < 10000; i++)
@@ -31,7 +31,38 @@ document.addEventListener('DOMContentLoaded', function()
 	var start = Math.floor(Math.random() * 5);
 	q = starts[start];
 	document.getElementById('q').innerHTML = q;
+
+	if(limit == 150) {
+		document.getElementById('easy').checked = true;
+	}
+	else if(limit == 300) {
+		document.getElementById('medium').checked = true;
+	}
+	else if(limit == 1000) {
+		document.getElementById('hard').checked = true;
+	}
+	else if(limit == 10000) {
+		document.getElementById('extreme').checked = true;
+	}
 });
+
+function changedSetting () {
+	limit = 150;
+	if(document.getElementById('easy').checked == true) {
+		limit = 150;
+	}
+	else if(document.getElementById('medium').checked == true) {
+		limit = 300;
+	}
+	else if(document.getElementById('hard').checked == true) {
+		limit = 1000;
+	}
+	else if(document.getElementById('extreme').checked == true) {
+		limit = 10000;
+	}
+
+	localStorage.setItem('limit', limit);
+}
 
 function answer () {
 	var ans = parseInt(document.getElementById('guess').value);

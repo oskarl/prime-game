@@ -41,10 +41,10 @@
 				<h2>Game</h2>
 				Difficulty:
 				<br /><br />
-				<input type="radio" id="easy" name="diff" checked> <label for="easy">Easy (2-150)</label><br />
-				<input type="radio" id="medium" name="diff"> <label for="medium">Medium (2-300)</label><br />
-				<input type="radio" id="hard" name="diff"> <label for="hard">Hard (2-1000)</label><br />
-				<input type="radio" id="extreme" name="diff"> <label for="extreme">Extreme (2-10000)</label>
+				<input type="radio" id="easy" name="diff" checked onchange="changedSetting();"> <label for="easy">Easy (2-150)</label><br />
+				<input type="radio" id="medium" name="diff" onchange="changedSetting();"> <label for="medium">Medium (2-300)</label><br />
+				<input type="radio" id="hard" name="diff" onchange="changedSetting();"> <label for="hard">Hard (2-1000)</label><br />
+				<input type="radio" id="extreme" name="diff" onchange="changedSetting();"> <label for="extreme">Extreme (2-10000)</label>
 
 				<h2>About primes</h2>
 				<p>Finding the prime factors of a number can be done by trial division, trying all possible primes up to the square root of the number to see if they're factors. If none of them are, the number itself is prime.</p>
