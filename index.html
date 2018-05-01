@@ -7,7 +7,7 @@
 
 		<!-- PWA /-->
 		<meta name="theme-color" content="#ffffff">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="manifest" href="manifest.json">
 
 		<!-- iOS /-->
@@ -29,7 +29,7 @@
 			<div class="view">
 				<h2 id="q"></h2>
 				<form action="javascript:answer();">
-				<input type="number" id="guess" placeholder="enter a prime factor" pattern="[0-9]*">
+				<input type="number" id="guess" aria-label="enter a prime factor" placeholder="enter a prime factor" pattern="[0-9]*">
 				<br />
 				<input type="submit" id="submit" value="Divide">
 				</form>
