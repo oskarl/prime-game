@@ -29,7 +29,7 @@
 			<div class="view">
 				<h2 id="q"></h2>
 				<form action="javascript:answer();">
-				<input type="number" id="guess" placeholder="enter a prime factor">
+				<input type="number" id="guess" placeholder="enter a prime factor" pattern="[0-9]*">
 				<br />
 				<input type="submit" id="submit" value="Divide">
 				</form>
@@ -41,7 +41,7 @@
 				<h2>Game</h2>
 				Difficulty:
 				<br /><br />
-				<input type="radio" id="easy" name="diff" selected> <label for="easy">Easy (2-150)</label><br />
+				<input type="radio" id="easy" name="diff" checked> <label for="easy">Easy (2-150)</label><br />
 				<input type="radio" id="medium" name="diff"> <label for="medium">Medium (2-300)</label><br />
 				<input type="radio" id="hard" name="diff"> <label for="hard">Hard (2-1000)</label><br />
 				<input type="radio" id="extreme" name="diff"> <label for="extreme">Extreme (2-10000)</label>
